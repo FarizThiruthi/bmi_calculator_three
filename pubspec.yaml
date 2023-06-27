@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   syncfusion_flutter_sliders: ^21.2.10
   syncfusion_flutter_gauges: ^21.2.10
+  countup: ^0.1.4
 
 dev_dependencies:
   flutter_test:

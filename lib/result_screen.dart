@@ -32,7 +32,6 @@ class _ResultScreenState extends State<ResultScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     bmi = widget.bmi;
   }

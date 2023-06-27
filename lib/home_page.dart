@@ -11,7 +11,6 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     navigateToOtherScreen();
   }

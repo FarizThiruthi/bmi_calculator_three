@@ -1,5 +1,4 @@
 import 'package:bmi_calculator_three/home_page.dart';
-import 'package:bmi_calculator_three/split_bill.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.white)
       ),
-      home:SplitBillPage(),
+      home:Homepage(),
     );
   }
 }

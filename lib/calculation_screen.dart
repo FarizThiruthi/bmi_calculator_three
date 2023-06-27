@@ -1,5 +1,6 @@
 import 'package:bmi_calculator_three/profile_page.dart';
 import 'package:bmi_calculator_three/result_screen.dart';
+import 'package:bmi_calculator_three/split_bill.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
@@ -54,10 +55,14 @@ class _CalculationScreenState extends State<CalculationScreen> {
                 Row(
                   children: [
                     FloatingActionButton(
-                      heroTag: "F5",
+                      heroTag: "F1",
                       backgroundColor: Colors.white,
                       mini: true,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (_) {
+                          return SplitBillPage();
+                        }));
+                      },
                       child: const Icon(
                         Icons.dashboard_customize,
                         color: Colors.black,
@@ -76,7 +81,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
                       ),
                     ),
                     FloatingActionButton(
-                      heroTag: "F6",
+                      heroTag: "F2",
                       backgroundColor: Colors.white,
                       mini: true,
                       onPressed: () {
@@ -278,7 +283,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
                                           children: [
                                             FloatingActionButton(
                                               mini: true,
-                                              heroTag: "F1",
+                                              heroTag: "F3",
                                               onPressed: () {
                                                 setState(() {
                                                   _weightValue++;
@@ -295,7 +300,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
                                             ),
                                             FloatingActionButton(
                                               mini: true,
-                                              heroTag: "F2",
+                                              heroTag: "F4",
                                               onPressed: () {
                                                 setState(() {
                                                   _weightValue--;
@@ -359,7 +364,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
                                           children: [
                                             FloatingActionButton(
                                               mini: true,
-                                              heroTag: "F3",
+                                              heroTag: "F5",
                                               onPressed: () {
                                                 setState(() {
                                                   _ageValue++;
@@ -376,7 +381,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
                                             ),
                                             FloatingActionButton(
                                               mini: true,
-                                              heroTag: "F4",
+                                              heroTag: "F6",
                                               onPressed: () {
                                                 setState(() {
                                                   _ageValue--;

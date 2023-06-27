@@ -1,27 +1,44 @@
-import 'package:bmi_calculator_three/calculation_screen.dart';
 import 'package:bmi_calculator_three/profile_page.dart';
+import 'package:bmi_calculator_three/split_bill.dart';
+import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
 
-class DetailsPage extends StatefulWidget {
-  final double bmi;
-  final String bmiInterpretation;
+class SplitResult extends StatefulWidget {
+  const SplitResult(
+      {super.key,
+      required this.splitAmount,
+      required this.people,
+      required this.tipValue,
+      required this.taxValue,
+      required this.totalBillText});
 
-  const DetailsPage(
-      {super.key, required this.bmi, required this.bmiInterpretation});
+  final double splitAmount;
+  final int people;
+  final int tipValue;
+  final int taxValue;
+  final String totalBillText;
 
   @override
-  State<DetailsPage> createState() => _DetailsPageState();
+  State<SplitResult> createState() => _SplitResultState();
 }
 
-class _DetailsPageState extends State<DetailsPage> {
-  late final double bmi;
-  late final String bmiInterpretation;
+class _SplitResultState extends State<SplitResult> {
+  late double splitAmount;
+  late int _people;
+  late int _taxValue;
+  late int _tipValue;
+  late String totalBillText;
 
   @override
   void initState() {
     super.initState();
-    bmi = widget.bmi;
-    bmiInterpretation = widget.bmiInterpretation;
+    splitAmount = widget.splitAmount;
+    _people = widget.people;
+    _taxValue = widget.taxValue;
+    _tipValue = widget.tipValue;
+    totalBillText = widget.totalBillText;
+    print(_people);
+    print(splitAmount);
   }
 
   @override
@@ -41,23 +58,23 @@ class _DetailsPageState extends State<DetailsPage> {
                 Row(
                   children: [
                     FloatingActionButton(
-                      heroTag: "F9",
+                      heroTag: "F17",
                       backgroundColor: Colors.white,
                       mini: true,
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
-                          return const CalculationScreen();
+                          return const SplitBillPage();
                         }));
                       },
                       child: const Icon(
-                        Icons.change_circle,
+                        Icons.arrow_back_ios_new,
                         color: Colors.black,
                       ),
                     ),
                     const Expanded(
                       child: Center(
                         child: Text(
-                          'BMI Info',
+                          'Split Result',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 24,
@@ -67,7 +84,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       ),
                     ),
                     FloatingActionButton(
-                      heroTag: "F10",
+                      heroTag: "F18",
                       backgroundColor: Colors.white,
                       mini: true,
                       onPressed: () {
@@ -87,6 +104,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 ),
                 Container(
                   height: 130,
+                  width: double.infinity,
                   margin: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -96,39 +114,24 @@ class _DetailsPageState extends State<DetailsPage> {
                           color: Colors.grey.shade300,
                           blurRadius: 9,
                           spreadRadius: 5,
-                          //offset: Offset(5, 5),
                         ),
                       ]),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Your BMI ',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w300),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        '${bmi.toStringAsFixed(2)}',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 35,
-                          color: Colors.black,
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('\$  '),
+                        Countup(
+                          begin: 0,
+                          end: splitAmount,
+                          duration: Duration(seconds: 3),
+                          separator: ',',
+                          style: TextStyle(
+                            fontSize: 36,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        '$bmiInterpretation',
-                        style: const TextStyle(
-                            color: Colors.cyan,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w300),
-                      )
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -148,8 +151,8 @@ class _DetailsPageState extends State<DetailsPage> {
                           //offset: Offset(5, 5),
                         ),
                       ]),
-                  child: const Padding(
-                    padding: EdgeInsets.all(10),
+                  child: Padding(
+                    padding: EdgeInsets.all(15),
                     child: Column(
                       children: [
                         Expanded(
@@ -157,10 +160,10 @@ class _DetailsPageState extends State<DetailsPage> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  'Less than 18.5',
+                                  'People',
                                   style: TextStyle(
                                       fontSize: 18,
-                                      fontWeight: FontWeight.w300),
+                                      fontWeight: FontWeight.w400),
                                 ),
                               ),
                               SizedBox(
@@ -169,10 +172,10 @@ class _DetailsPageState extends State<DetailsPage> {
                               Expanded(
                                 child: Center(
                                   child: Text(
-                                    'Underweight',
+                                    _people.toString(),
                                     style: TextStyle(
                                         fontSize: 18,
-                                        fontWeight: FontWeight.w400),
+                                        fontWeight: FontWeight.w300),
                                   ),
                                 ),
                               ),
@@ -184,10 +187,10 @@ class _DetailsPageState extends State<DetailsPage> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  '18.5 to 24.9',
+                                  'Tax',
                                   style: TextStyle(
                                       fontSize: 18,
-                                      fontWeight: FontWeight.w300),
+                                      fontWeight: FontWeight.w400),
                                 ),
                               ),
                               SizedBox(
@@ -196,10 +199,10 @@ class _DetailsPageState extends State<DetailsPage> {
                               Expanded(
                                 child: Center(
                                   child: Text(
-                                    'Normal',
+                                    _taxValue.toString(),
                                     style: TextStyle(
                                         fontSize: 18,
-                                        fontWeight: FontWeight.w400),
+                                        fontWeight: FontWeight.w300),
                                   ),
                                 ),
                               ),
@@ -211,10 +214,10 @@ class _DetailsPageState extends State<DetailsPage> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  '25 to 29.9',
+                                  'Tip',
                                   style: TextStyle(
                                       fontSize: 18,
-                                      fontWeight: FontWeight.w300),
+                                      fontWeight: FontWeight.w400),
                                 ),
                               ),
                               SizedBox(
@@ -223,10 +226,10 @@ class _DetailsPageState extends State<DetailsPage> {
                               Expanded(
                                 child: Center(
                                   child: Text(
-                                    'Overweight',
+                                    _tipValue.toString(),
                                     style: TextStyle(
                                         fontSize: 18,
-                                        fontWeight: FontWeight.w400),
+                                        fontWeight: FontWeight.w300),
                                   ),
                                 ),
                               ),
@@ -238,10 +241,10 @@ class _DetailsPageState extends State<DetailsPage> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  'More than 29.9',
+                                  'Amount',
                                   style: TextStyle(
                                       fontSize: 18,
-                                      fontWeight: FontWeight.w300),
+                                      fontWeight: FontWeight.w400),
                                 ),
                               ),
                               SizedBox(
@@ -250,10 +253,10 @@ class _DetailsPageState extends State<DetailsPage> {
                               Expanded(
                                 child: Center(
                                   child: Text(
-                                    'Obesity',
+                                    totalBillText.toString(),
                                     style: TextStyle(
                                         fontSize: 18,
-                                        fontWeight: FontWeight.w400),
+                                        fontWeight: FontWeight.w300),
                                   ),
                                 ),
                               ),
