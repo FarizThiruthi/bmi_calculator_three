@@ -1,4 +1,5 @@
 import 'package:bmi_calculator_three/calculation_screen.dart';
+import 'package:bmi_calculator_three/home_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -45,9 +46,11 @@ class ProfilePage extends StatelessWidget {
                       heroTag: "F10",
                       backgroundColor: Colors.white,
                       mini: true,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Homepage()));
+                      },
                       child: const Icon(
-                        Icons.account_circle_rounded,
+                        Icons.home,
                         color: Colors.black,
                       ),
                     ),

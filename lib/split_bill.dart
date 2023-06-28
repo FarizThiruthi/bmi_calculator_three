@@ -1,4 +1,4 @@
-import 'package:bmi_calculator_three/calculation_screen.dart';
+import 'package:bmi_calculator_three/home_page.dart';
 import 'package:bmi_calculator_three/profile_page.dart';
 import 'package:bmi_calculator_three/split_result.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class _SplitBillPageState extends State<SplitBillPage> {
   final myController = TextEditingController();
   int _people = 2;
   int _tipValue = 10;
-  int _taxValue = 0;
+  int _taxValue = 5;
   Color _calculateContainer = Colors.white;
   Color _calculateText = Colors.black;
   late double splitAmount;
@@ -70,7 +70,7 @@ class _SplitBillPageState extends State<SplitBillPage> {
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (_) {
-                            return const CalculationScreen();
+                            return const Homepage();
                           }));
                         },
                         child: const Icon(

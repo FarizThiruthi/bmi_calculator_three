@@ -37,8 +37,6 @@ class _SplitResultState extends State<SplitResult> {
     _taxValue = widget.taxValue;
     _tipValue = widget.tipValue;
     totalBillText = widget.totalBillText;
-    print(_people);
-    print(splitAmount);
   }
 
   @override
@@ -199,7 +197,7 @@ class _SplitResultState extends State<SplitResult> {
                               Expanded(
                                 child: Center(
                                   child: Text(
-                                    _taxValue.toString(),
+                                    '${_taxValue.toString()} %',
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300),
@@ -226,7 +224,7 @@ class _SplitResultState extends State<SplitResult> {
                               Expanded(
                                 child: Center(
                                   child: Text(
-                                    _tipValue.toString(),
+                                    '${_tipValue.toString()} %',
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300),
@@ -253,7 +251,7 @@ class _SplitResultState extends State<SplitResult> {
                               Expanded(
                                 child: Center(
                                   child: Text(
-                                    totalBillText.toString(),
+                                    '${totalBillText.toString()} \$',
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300),

@@ -1,6 +1,6 @@
+import 'package:bmi_calculator_three/home_page.dart';
 import 'package:bmi_calculator_three/profile_page.dart';
 import 'package:bmi_calculator_three/result_screen.dart';
-import 'package:bmi_calculator_three/split_bill.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
@@ -60,11 +60,11 @@ class _CalculationScreenState extends State<CalculationScreen> {
                       mini: true,
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
-                          return SplitBillPage();
+                          return Homepage();
                         }));
                       },
                       child: const Icon(
-                        Icons.dashboard_customize,
+                        Icons.home,
                         color: Colors.black,
                       ),
                     ),

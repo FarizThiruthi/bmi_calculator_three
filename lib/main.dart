@@ -11,13 +11,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'BMI Calculator',
       theme: ThemeData(
         primaryColor: Colors.transparent,
         primarySwatch: Colors.grey,
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.white)
       ),
-      home:Homepage(),
+      home: Homepage(),
     );
   }
 }

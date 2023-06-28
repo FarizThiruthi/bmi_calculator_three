@@ -106,7 +106,6 @@ class _ResultScreenState extends State<ResultScreen> {
                           color: Colors.grey.shade300,
                           blurRadius: 9,
                           spreadRadius: 5,
-                          //offset: Offset(5, 5),
                         ),
                       ]),
                   //margin: const EdgeInsets.all(8),
