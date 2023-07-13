@@ -1,4 +1,4 @@
-import 'package:bmi_calculator_three/calculation_screen.dart';
+import 'package:bmi_calculator_three/bmi/calculation_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomepageBMI extends StatefulWidget {

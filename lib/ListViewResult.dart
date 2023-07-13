@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bmi_calculator_three/home_page.dart';
-import 'package:bmi_calculator_three/list_view.dart';
+import 'package:bmi_calculator_three/ProfilesListView/list_view.dart';
 import 'package:flutter/material.dart';
 
 class ListViewResult extends StatefulWidget {

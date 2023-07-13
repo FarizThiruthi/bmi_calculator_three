@@ -1,4 +1,4 @@
-import 'package:bmi_calculator_three/split_bill.dart';
+import 'package:bmi_calculator_three/SplitBill/split_bill.dart';
 import 'package:flutter/material.dart';
 
 class HomeSplitBill extends StatefulWidget {

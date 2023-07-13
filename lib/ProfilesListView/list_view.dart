@@ -37,31 +37,35 @@ class _ListNavigationState extends State<ListNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('Profiles'),
+          centerTitle: true,
+        ),
         body: ListView.builder(
-      itemBuilder: (context, index) {
-        String img = cities[index].image;
-        String title = cities[index].title;
-        String subtitle = cities[index].subTitle;
-        return Padding(
-          padding: const EdgeInsets.all(10),
-          child: ListTile(
-            leading: CircleAvatar(
-              radius: 30,
-              backgroundImage: AssetImage(cities[index].image),
-            ),
-            title: Text(cities[index].title),
-            subtitle: Text(cities[index].subTitle),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ListViewResult(
-                          image: img, title: title, subtitle: subtitle)));
-            },
-          ),
-        );
-      },
-      itemCount: cities.length,
-    ));
+          itemBuilder: (context, index) {
+            String img = cities[index].image;
+            String title = cities[index].title;
+            String subtitle = cities[index].subTitle;
+            return Padding(
+              padding: const EdgeInsets.all(10),
+              child: ListTile(
+                leading: CircleAvatar(
+                  radius: 30,
+                  backgroundImage: AssetImage(cities[index].image),
+                ),
+                title: Text(cities[index].title),
+                subtitle: Text(cities[index].subTitle),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ListViewResult(
+                              image: img, title: title, subtitle: subtitle)));
+                },
+              ),
+            );
+          },
+          itemCount: cities.length,
+        ));
   }
 }

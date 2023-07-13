@@ -1,6 +1,11 @@
-import 'package:bmi_calculator_three/home_page_bmi.dart';
-import 'package:bmi_calculator_three/home_page_split_screen.dart';
-import 'package:bmi_calculator_three/list_view.dart';
+import 'package:bmi_calculator_three/Dashboard/dasboard.dart';
+import 'package:bmi_calculator_three/DiceApp/dice_app.dart';
+import 'package:bmi_calculator_three/HangMan/hang_man.dart';
+import 'package:bmi_calculator_three/MagicBall/magic_ball.dart';
+import 'package:bmi_calculator_three/Quotes/quotes_app.dart';
+import 'package:bmi_calculator_three/SplitBill/home_page_split_screen.dart';
+import 'package:bmi_calculator_three/bmi/home_page_bmi.dart';
+import 'package:bmi_calculator_three/ProfilesListView/list_view.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -298,52 +303,6 @@ class _HomepageState extends State<Homepage> {
                                 ),
                               ),
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.indigo.shade900,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              padding: const EdgeInsets.all(15),
-                              child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Material(
-                                      color: Colors.white,
-                                      shape: CircleBorder(
-                                          side: BorderSide(
-                                              color: Colors.yellow, width: 2)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(5),
-                                        child: Icon(
-                                          Icons.settings,
-                                          color: Colors.yellow,
-                                          size: 30,
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(height: 6),
-                                    Text(
-                                      'Settings',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 25),
-                                    ),
-                                    SizedBox(height: 6),
-                                    Text(
-                                      'Change Settings Online',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -400,6 +359,284 @@ class _HomepageState extends State<Homepage> {
                                 ),
                               ),
                             ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MagicBall()));
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.indigo.shade900,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                padding: const EdgeInsets.all(15),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Material(
+                                        color: Colors.white,
+                                        shape: CircleBorder(
+                                            side: BorderSide(
+                                                color: Colors.green, width: 2)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Icon(
+                                            Icons.pan_tool_alt_rounded,
+                                            color: Colors.green,
+                                            size: 30,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'Magic Ball',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 25),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'Rule and How to Play',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => TossApp()));
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.indigo.shade900,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                padding: const EdgeInsets.all(15),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Material(
+                                        color: Colors.white,
+                                        shape: CircleBorder(
+                                            side: BorderSide(
+                                                color: Colors.black38,
+                                                width: 2)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Icon(
+                                            Icons.grid_view_rounded,
+                                            color: Colors.black38,
+                                            size: 30,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'Dice',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 25),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'See your Luck',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => QuotesApp()));
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.indigo.shade900,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                padding: const EdgeInsets.all(15),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Material(
+                                        color: Colors.white,
+                                        shape: CircleBorder(
+                                            side: BorderSide(
+                                                color: Colors.orangeAccent,
+                                                width: 2)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Icon(
+                                            Icons.menu_book,
+                                            color: Colors.orangeAccent,
+                                            size: 30,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'Quotes',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 25),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'Your Information and History',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => HangMan()));
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.indigo.shade900,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                padding: const EdgeInsets.all(15),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Material(
+                                        color: Colors.white,
+                                        shape: CircleBorder(
+                                            side: BorderSide(
+                                                color: Colors.red, width: 2)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Icon(
+                                            Icons.man,
+                                            color: Colors.red,
+                                            size: 30,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'Hang Man',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 25),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'Rule and How to Play',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Dashboard()));
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.indigo.shade900,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                padding: const EdgeInsets.all(15),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Material(
+                                        color: Colors.white,
+                                        shape: CircleBorder(
+                                            side: BorderSide(
+                                                color: Colors.lightGreenAccent,
+                                                width: 2)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5),
+                                          child: Icon(
+                                            Icons.dashboard_rounded,
+                                            color: Colors.lightGreenAccent,
+                                            size: 30,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'Dashboard',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 25),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        'Rule and How to Play',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
                             Container(
                               decoration: BoxDecoration(
                                 color: Colors.indigo.shade900,
@@ -415,19 +652,19 @@ class _HomepageState extends State<Homepage> {
                                       color: Colors.white,
                                       shape: CircleBorder(
                                           side: BorderSide(
-                                              color: Colors.green, width: 2)),
+                                              color: Colors.yellow, width: 2)),
                                       child: Padding(
                                         padding: const EdgeInsets.all(5),
                                         child: Icon(
-                                          Icons.pan_tool_alt_rounded,
-                                          color: Colors.green,
+                                          Icons.settings,
+                                          color: Colors.yellow,
                                           size: 30,
                                         ),
                                       ),
                                     ),
                                     SizedBox(height: 6),
                                     Text(
-                                      'Guide',
+                                      'Settings',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w500,
@@ -435,7 +672,7 @@ class _HomepageState extends State<Homepage> {
                                     ),
                                     SizedBox(height: 6),
                                     Text(
-                                      'Rule and How to Play',
+                                      'Change Settings Online',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18,
