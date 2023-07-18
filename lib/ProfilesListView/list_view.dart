@@ -1,4 +1,4 @@
-import 'package:bmi_calculator_three/ListViewResult.dart';
+import 'package:bmi_calculator_three/ProfilesListView/ListViewResult.dart';
 import 'package:bmi_calculator_three/model/listModel.dart';
 import 'package:flutter/material.dart';
 

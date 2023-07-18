@@ -1,5 +1,5 @@
 import 'package:bmi_calculator_three/SplitBill/split_bill.dart';
-import 'package:bmi_calculator_three/profile_page.dart';
+import 'package:bmi_calculator_three/InfoProfilePage/profile_page.dart';
 import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
 

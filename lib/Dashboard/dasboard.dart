@@ -1,3 +1,6 @@
+
+import 'package:bmi_calculator_three/model/dashboardModel.dart';
+import 'package:bmi_calculator_three/utils/colorfun.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -9,6 +12,29 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   bool forAndroid = true;
+  List places = [
+    dashboardModel(
+      title: "Evening",
+      subTitle: "Best way to spent eve",
+    ),
+    dashboardModel(
+      title: 'Sky',
+      subTitle: 'Sky cant be better',
+    ),
+    dashboardModel(
+      title: 'Sky and road',
+      subTitle: 'Road cannot be better',
+    ),
+    dashboardModel(
+      title: 'Moon at Night',
+      subTitle: 'Moon at night may shine like a sun',
+    ),
+    dashboardModel(
+      title: 'Tree',
+      subTitle: 'Tree with empty leaves',
+    )
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -129,8 +155,11 @@ class _DashboardState extends State<Dashboard> {
             SizedBox(
               height: 10,
             ),
-            Text('Themes',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text('Themes',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
             Expanded(
               child: ListView.builder(
                 itemCount: 4,
@@ -141,7 +170,7 @@ class _DashboardState extends State<Dashboard> {
                       Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: Colors.cyan,
+                            color: randomColor(),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.shade200,
@@ -174,13 +203,20 @@ class _DashboardState extends State<Dashboard> {
                             width: 250,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'File Manager',
+                                  (places[position].title),
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20),
-                                )
+                                ),
+                                Text(
+                                  places[position].subTitle,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 15),
+                                ),
                               ],
                             ),
                           ),
@@ -189,7 +225,7 @@ class _DashboardState extends State<Dashboard> {
                               right: -7,
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.cyan,
+                                  color: randomColor(),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Icon(

@@ -1,5 +1,5 @@
 import 'package:bmi_calculator_three/home_page.dart';
-import 'package:bmi_calculator_three/profile_page.dart';
+import 'package:bmi_calculator_three/InfoProfilePage/profile_page.dart';
 import 'package:bmi_calculator_three/bmi/result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';

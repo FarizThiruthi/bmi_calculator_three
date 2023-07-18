@@ -1,5 +1,5 @@
 import 'package:bmi_calculator_three/bmi/calculation_screen.dart';
-import 'package:bmi_calculator_three/profile_page.dart';
+import 'package:bmi_calculator_three/InfoProfilePage/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatefulWidget {
