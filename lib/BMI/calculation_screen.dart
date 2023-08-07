@@ -42,414 +42,416 @@ class _CalculationScreenState extends State<CalculationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Container(
-          decoration: const BoxDecoration(color: Colors.white),
-          margin: const EdgeInsets.all(10),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  FloatingActionButton(
-                    heroTag: "F1",
-                    backgroundColor: Colors.white,
-                    mini: true,
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (_) {
-                        return Homepage();
-                      }));
-                    },
-                    child: const Icon(
-                      Icons.home,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const Expanded(
-                    child: Center(
-                      child: Text(
-                        'BMI Calculator',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 24,
-                          color: Colors.black,
-                        ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Container(
+            decoration: const BoxDecoration(color: Colors.white),
+            margin: const EdgeInsets.all(10),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    FloatingActionButton(
+                      heroTag: "F1",
+                      backgroundColor: Colors.white,
+                      mini: true,
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (_) {
+                          return Homepage();
+                        }));
+                      },
+                      child: const Icon(
+                        Icons.home,
+                        color: Colors.black,
                       ),
                     ),
-                  ),
-                  FloatingActionButton(
-                    heroTag: "F2",
-                    backgroundColor: Colors.white,
-                    mini: true,
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (_) {
-                        return const ProfilePage();
-                      }));
-                    },
-                    child: const Icon(
-                      Icons.account_circle_rounded,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _maleContainer = Colors.cyan;
-                          _femaleContainer = Colors.white;
-                          _maleText = Colors.white;
-                          _femaleText = Colors.black;
-                        });
-                      },
-                      child: Container(
-                        height: 50,
-                        margin: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: _maleContainer,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade300,
-                                blurRadius: 9,
-                                spreadRadius: 5,
-                                //offset: Offset(5, 5),
-                              ),
-                            ]),
-                        child: Center(
-                          child: Text(
-                            'Male',
-                            style: TextStyle(
-                                color: _maleText,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w300),
+                    const Expanded(
+                      child: Center(
+                        child: Text(
+                          'BMI Calculator',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 24,
+                            color: Colors.black,
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _femaleContainer = Colors.cyan;
-                          _maleContainer = Colors.white;
-                          _femaleText = Colors.white;
-                          _maleText = Colors.black;
-                        });
+                    FloatingActionButton(
+                      heroTag: "F2",
+                      backgroundColor: Colors.white,
+                      mini: true,
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (_) {
+                          return const ProfilePage();
+                        }));
                       },
-                      child: Container(
-                        height: 50,
-                        margin: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: _femaleContainer,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade300,
-                                blurRadius: 9,
-                                spreadRadius: 5,
-                                //offset: Offset(5, 5),
-                              ),
-                            ]),
-                        child: Center(
-                          child: Text(
-                            'Female',
-                            style: TextStyle(
-                                color: _femaleText,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
+                      child: const Icon(
+                        Icons.account_circle_rounded,
+                        color: Colors.black,
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 25),
-              Expanded(
-                child: Row(
+                  ],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
                   children: [
                     Expanded(
-                      child: Container(
-                        margin: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade300,
-                                blurRadius: 9,
-                                spreadRadius: 5,
-                                //offset: Offset(5, 5),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _maleContainer = Colors.cyan;
+                            _femaleContainer = Colors.white;
+                            _maleText = Colors.white;
+                            _femaleText = Colors.black;
+                          });
+                        },
+                        child: Container(
+                          height: 50,
+                          margin: const EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                              color: _maleContainer,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.shade300,
+                                  blurRadius: 9,
+                                  spreadRadius: 5,
+                                  //offset: Offset(5, 5),
+                                ),
+                              ]),
+                          child: Center(
+                            child: Text(
+                              'Male',
+                              style: TextStyle(
+                                  color: _maleText,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _femaleContainer = Colors.cyan;
+                            _maleContainer = Colors.white;
+                            _femaleText = Colors.white;
+                            _maleText = Colors.black;
+                          });
+                        },
+                        child: Container(
+                          height: 50,
+                          margin: const EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                              color: _femaleContainer,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.shade300,
+                                  blurRadius: 9,
+                                  spreadRadius: 5,
+                                  //offset: Offset(5, 5),
+                                ),
+                              ]),
+                          child: Center(
+                            child: Text(
+                              'Female',
+                              style: TextStyle(
+                                  color: _femaleText,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 25),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.shade300,
+                                  blurRadius: 9,
+                                  spreadRadius: 5,
+                                  //offset: Offset(5, 5),
+                                ),
+                              ]),
+                          child: Column(
+                            children: [
+                              const Center(
+                                child: Padding(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: Text(
+                                    'Height',
+                                    style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w200),
+                                  ),
+                                ),
                               ),
-                            ]),
-                        child: Column(
-                          children: [
-                            const Center(
-                              child: Padding(
-                                padding: EdgeInsets.all(10.0),
+                              Expanded(
+                                child: SfSlider.vertical(
+                                  activeColor: Colors.cyan,
+                                  min: 100.0,
+                                  max: 250.0,
+                                  value: _currentSliderValue,
+                                  interval: 20,
+                                  enableTooltip: true,
+                                  minorTicksPerInterval: 2,
+                                  onChanged: (dynamic value) {
+                                    setState(() {
+                                      _currentSliderValue = value;
+                                    });
+                                  },
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(10),
                                 child: Text(
-                                  'Height',
-                                  style: TextStyle(
+                                  _currentSliderValue.toStringAsFixed(2) +
+                                      ' CM',
+                                  style: const TextStyle(
                                       fontSize: 13,
                                       fontWeight: FontWeight.w200),
                                 ),
                               ),
-                            ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          children: [
                             Expanded(
-                              child: SfSlider.vertical(
-                                activeColor: Colors.cyan,
-                                min: 100.0,
-                                max: 250.0,
-                                value: _currentSliderValue,
-                                interval: 20,
-                                enableTooltip: true,
-                                minorTicksPerInterval: 2,
-                                onChanged: (dynamic value) {
-                                  setState(() {
-                                    _currentSliderValue = value;
-                                  });
-                                },
+                              child: Container(
+                                margin: const EdgeInsets.all(15),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.shade300,
+                                        blurRadius: 9,
+                                        spreadRadius: 5,
+                                        //offset: Offset(5, 5),
+                                      ),
+                                    ]),
+                                child: Column(
+                                  children: [
+                                    const Padding(
+                                      padding: EdgeInsets.all(15),
+                                      child: Text(
+                                        'Weight',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w200),
+                                      ),
+                                    ),
+                                    Expanded(
+                                        child: Center(
+                                      child: Text(
+                                        _weightValue.toString(),
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.w300,
+                                          fontSize: 35,
+                                        ),
+                                      ),
+                                    )),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(10),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            FloatingActionButton(
+                                              mini: true,
+                                              heroTag: "F3",
+                                              onPressed: () {
+                                                setState(() {
+                                                  _weightValue++;
+                                                });
+                                              },
+                                              backgroundColor: Colors.white,
+                                              child: const Icon(
+                                                Icons.add,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              width: 20,
+                                            ),
+                                            FloatingActionButton(
+                                              mini: true,
+                                              heroTag: "F4",
+                                              onPressed: () {
+                                                setState(() {
+                                                  _weightValue--;
+                                                });
+                                              },
+                                              backgroundColor: Colors.white,
+                                              child: const Icon(
+                                                Icons.remove,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: Text(
-                                _currentSliderValue.toStringAsFixed(2) +
-                                    ' CM',
-                                style: const TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w200),
+                            Expanded(
+                              child: Container(
+                                margin: const EdgeInsets.all(15),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.shade300,
+                                        blurRadius: 9,
+                                        spreadRadius: 5,
+                                        //offset: Offset(5, 5),
+                                      ),
+                                    ]),
+                                child: Column(
+                                  children: [
+                                    const Padding(
+                                      padding: EdgeInsets.all(15),
+                                      child: Text(
+                                        'Age',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w200),
+                                      ),
+                                    ),
+                                    Expanded(
+                                        child: Center(
+                                      child: Text(
+                                        _ageValue.toString(),
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.w300,
+                                          fontSize: 35,
+                                        ),
+                                      ),
+                                    )),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(10),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            FloatingActionButton(
+                                              mini: true,
+                                              heroTag: "F5",
+                                              onPressed: () {
+                                                setState(() {
+                                                  _ageValue++;
+                                                });
+                                              },
+                                              backgroundColor: Colors.white,
+                                              child: const Icon(
+                                                Icons.add,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              width: 20,
+                                            ),
+                                            FloatingActionButton(
+                                              mini: true,
+                                              heroTag: "F6",
+                                              onPressed: () {
+                                                setState(() {
+                                                  _ageValue--;
+                                                });
+                                              },
+                                              backgroundColor: Colors.white,
+                                              child: const Icon(
+                                                Icons.remove,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ],
                         ),
                       ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.shade300,
-                                      blurRadius: 9,
-                                      spreadRadius: 5,
-                                      //offset: Offset(5, 5),
-                                    ),
-                                  ]),
-                              child: Column(
-                                children: [
-                                  const Padding(
-                                    padding: EdgeInsets.all(15),
-                                    child: Text(
-                                      'Weight',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w200),
-                                    ),
-                                  ),
-                                  Expanded(
-                                      child: Center(
-                                    child: Text(
-                                      _weightValue.toString(),
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w300,
-                                        fontSize: 35,
-                                      ),
-                                    ),
-                                  )),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(10),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          FloatingActionButton(
-                                            mini: true,
-                                            heroTag: "F3",
-                                            onPressed: () {
-                                              setState(() {
-                                                _weightValue++;
-                                              });
-                                            },
-                                            backgroundColor: Colors.white,
-                                            child: const Icon(
-                                              Icons.add,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                          const SizedBox(
-                                            width: 20,
-                                          ),
-                                          FloatingActionButton(
-                                            mini: true,
-                                            heroTag: "F4",
-                                            onPressed: () {
-                                              setState(() {
-                                                _weightValue--;
-                                              });
-                                            },
-                                            backgroundColor: Colors.white,
-                                            child: const Icon(
-                                              Icons.remove,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.shade300,
-                                      blurRadius: 9,
-                                      spreadRadius: 5,
-                                      //offset: Offset(5, 5),
-                                    ),
-                                  ]),
-                              child: Column(
-                                children: [
-                                  const Padding(
-                                    padding: EdgeInsets.all(15),
-                                    child: Text(
-                                      'Age',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w200),
-                                    ),
-                                  ),
-                                  Expanded(
-                                      child: Center(
-                                    child: Text(
-                                      _ageValue.toString(),
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w300,
-                                        fontSize: 35,
-                                      ),
-                                    ),
-                                  )),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(10),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          FloatingActionButton(
-                                            mini: true,
-                                            heroTag: "F5",
-                                            onPressed: () {
-                                              setState(() {
-                                                _ageValue++;
-                                              });
-                                            },
-                                            backgroundColor: Colors.white,
-                                            child: const Icon(
-                                              Icons.add,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                          const SizedBox(
-                                            width: 20,
-                                          ),
-                                          FloatingActionButton(
-                                            mini: true,
-                                            heroTag: "F6",
-                                            onPressed: () {
-                                              setState(() {
-                                                _ageValue--;
-                                              });
-                                            },
-                                            backgroundColor: Colors.white,
-                                            child: const Icon(
-                                              Icons.remove,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(height: 30),
-              GestureDetector(
-                onTap: () {
-                  if (isMaleSelected() || isFemaleSelected()) {
-                    setState(() {
-                      _beginContainer = Colors.cyan;
-                      _beginText = Colors.white;
-                      Navigator.push(context, MaterialPageRoute(builder: (_) {
-                        return ResultScreen(bmi: bmi);
-                      }));
-                      CalculateBMI();
-                    });
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Please Select the Gender')));
-                  }
-                },
-                child: Container(
-                  height: 50,
-                  margin: const EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                      color: _beginContainer,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade300,
-                          blurRadius: 9,
-                          spreadRadius: 5,
-                          //offset: Offset(5, 5),
-                        ),
-                      ]),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Let's Begin",
-                      style: TextStyle(
-                          color: _beginText,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300),
+                const SizedBox(height: 30),
+                GestureDetector(
+                  onTap: () {
+                    if (isMaleSelected() || isFemaleSelected()) {
+                      setState(() {
+                        _beginContainer = Colors.cyan;
+                        _beginText = Colors.white;
+                        Navigator.push(context, MaterialPageRoute(builder: (_) {
+                          return ResultScreen(bmi: bmi);
+                        }));
+                        CalculateBMI();
+                      });
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Please Select the Gender')));
+                    }
+                  },
+                  child: Container(
+                    height: 50,
+                    margin: const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                        color: _beginContainer,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.shade300,
+                            blurRadius: 9,
+                            spreadRadius: 5,
+                            //offset: Offset(5, 5),
+                          ),
+                        ]),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Let's Begin",
+                        style: TextStyle(
+                            color: _beginText,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w300),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
